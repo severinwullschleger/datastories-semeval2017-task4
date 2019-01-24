@@ -123,7 +123,7 @@ class Task4Loader:
                 fix_html=True,
                 segmenter="twitter",
                 corrector="twitter",
-                unpack_hashtags=True,
+                unpack_hashtags=False,          # bad performance
                 unpack_contractions=True,
                 spell_correct_elong=False,
                 tokenizer=SocialTokenizer(lowercase=True).tokenize,
