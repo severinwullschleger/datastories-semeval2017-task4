@@ -18,7 +18,7 @@ Citation:
 }
 ```
 
-![MSA](task4A-1.png)
+![MSA](task3A.png)
 *The message-level sentiment analysis model, for SubTask A.*
 
 ![MSA](task4C-1.png)
