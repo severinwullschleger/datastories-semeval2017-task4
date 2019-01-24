@@ -26,11 +26,11 @@ WV_DIM = 300
 # - if FINAL == True,   then the dataset will be split in {train, val}.
 # Even for training the model for the final submission a small percentage
 # of the labeled data will be kept for as a validation set for early stopping
-FINAL = True
+FINAL = False
 
 # If True, the SemEval gold labels will be used as the testing set
 # in order to perform Post-mortem analysis
-SEMEVAL_GOLD = True
+SEMEVAL_GOLD = False
 
 max_length = 50
 TASK = "A"  # Specify the Subtask. It is needed to correctly load the data

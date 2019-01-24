@@ -100,30 +100,31 @@ class SemEvalDataLoader:
         :param datasets: set with possible values {"train", "dev", "devtest", "test"}
         :return: a list of tuples (sentiment, text)
         """
-        if only_semeval:
-            files = glob.glob(self.task_folders[task] + "*{}.tsv".format(task))
-        else:
-            files = glob.glob(self.task_folders[task] + "*.tsv")
+        # if only_semeval:
+        #     files = glob.glob(self.task_folders[task] + "*{}.tsv".format(task))
+        # else:
+
+        files = glob.glob(self.task_folders[task] + "*.tsv")
         data = {}
 
-        if years is not None and not isinstance(years, tuple):
-            years = (years, years)
+        # if years is not None and not isinstance(years, tuple):
+        #     years = (years, years)
 
-        for file in files:
-            year = int(re.findall("\d{4}", file)[-1])
-            _type = re.findall("(?<=\d{4})\w+(?=\-)", file)[-1]
+        # for file in files:
+        #     year = int(re.findall("\d{4}", file)[-1])
+        #     _type = re.findall("(?<=\d{4})\w+(?=\-)", file)[-1]
+        #
+        #     if _type not in {"train", "dev", "devtest", "test"}:
+        #         _type = "devtest"
+        #
+        #     if years is not None and not years[0] <= year <= years[1]:
+        #         continue
+        #     if datasets is not None and _type not in datasets:
+        #         continue
 
-            if _type not in {"train", "dev", "devtest", "test"}:
-                _type = "devtest"
-
-            if years is not None and not years[0] <= year <= years[1]:
-                continue
-            if datasets is not None and _type not in datasets:
-                continue
-
-            dataset = self.parse_file(file, with_topic=task != "A")
-            # data.append((year, tp, dataset))
-            data.update(dataset)
+        dataset = self.parse_file(files[0], with_topic=task != "A")
+        # data.append((year, tp, dataset))
+        data.update(dataset)
 
         return [v for k, v in sorted(data.items())]
 
