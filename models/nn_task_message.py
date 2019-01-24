@@ -77,7 +77,7 @@ if SEMEVAL_GOLD:
 # Uncomment one of the following model definitions, in order to define a model
 ############################################################################
 print("Building NN Model...")
-nn_model = build_attention_RNN(embeddings, classes=3, max_length=max_length,
+nn_model = build_attention_RNN(embeddings, classes=2, max_length=max_length,
                                unit=LSTM, layers=2, cells=150,
                                bidirectional=True,
                                attention="simple",
