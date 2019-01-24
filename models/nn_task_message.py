@@ -127,7 +127,7 @@ if not FINAL:
 
 metrics_callback = MetricsCallback(datasets=_datasets, metrics=metrics)
 plotting = PlottingCallback(grid_ranges=(0.3, 0.75), height=5,
-                            benchmarks={"SE18": 0.681})
+                            benchmarks={"SE18": 0.65})              # top 3 results
 
 _callbacks = []
 _callbacks.append(metrics_callback)
