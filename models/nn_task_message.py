@@ -126,8 +126,8 @@ if not FINAL:
     _datasets["3-test"] = testing
 
 metrics_callback = MetricsCallback(datasets=_datasets, metrics=metrics)
-plotting = PlottingCallback(grid_ranges=(0.5, 0.75), height=5,
-                            benchmarks={"SE17": 0.681})
+plotting = PlottingCallback(grid_ranges=(0.3, 0.75), height=5,
+                            benchmarks={"SE18": 0.681})
 
 _callbacks = []
 _callbacks.append(metrics_callback)
