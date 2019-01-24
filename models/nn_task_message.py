@@ -105,8 +105,8 @@ print(nn_model.summary())
 metrics = {
     "f1_pn": (lambda y_test, y_pred:
               f1_score(y_test, y_pred, average='macro',
-                       labels=[class_to_cat_mapping['positive'],
-                               class_to_cat_mapping['negative']])),
+                       labels=[class_to_cat_mapping['0'],
+                               class_to_cat_mapping['1']])),
     "M_recall": (
         lambda y_test, y_pred: recall_score(y_test, y_pred, average='macro')),
     "M_precision": (
@@ -114,7 +114,7 @@ metrics = {
                                                average='macro'))
 }
 
-classes = ['positive', 'negative', 'neutral']
+classes = ['0', '1']
 class_to_cat_mapping = get_labels_to_categories_map(classes)
 cat_to_class_mapping = {v: k for k, v in
                         get_labels_to_categories_map(classes).items()}
