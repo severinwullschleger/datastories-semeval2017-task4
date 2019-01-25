@@ -88,7 +88,7 @@ nn_model = build_attention_RNN(embeddings, classes=2, max_length=max_length,
                                dropout_words=0.5,
                                dropout_rnn=0.5,
                                dropout_rnn_U=0.5,
-                               clipnorm=1, lr=0.001, loss_l2=0.0001,)
+                               clipnorm=1, lr=0.0001, loss_l2=0.0001,)
 
 # nn_model = cnn_simple(embeddings, max_length)
 
