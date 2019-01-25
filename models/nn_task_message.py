@@ -149,7 +149,7 @@ print("Class weights:",
 
 history = nn_model.fit(training[0], training[1],
                        validation_data=validation if not FINAL else testing,
-                       epochs=20, batch_size=50,
+                       epochs=50, batch_size=50,
                        class_weight=class_weights, callbacks=_callbacks)
 
 pickle.dump(history.history,
