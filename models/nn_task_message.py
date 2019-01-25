@@ -26,11 +26,11 @@ WV_DIM = 300
 # - if FINAL == True,   then the dataset will be split in {train, val}.
 # Even for training the model for the final submission a small percentage
 # of the labeled data will be kept for as a validation set for early stopping
-FINAL = False
+FINAL = True
 
 # If True, the SemEval gold labels will be used as the testing set
 # in order to perform Post-mortem analysis
-SEMEVAL_GOLD = False
+SEMEVAL_GOLD = True
 
 max_length = 50
 TASK = "A"  # Specify the Subtask. It is needed to correctly load the data
@@ -149,7 +149,7 @@ print("Class weights:",
 
 history = nn_model.fit(training[0], training[1],
                        validation_data=validation if not FINAL else testing,
-                       epochs=50, batch_size=50,
+                       epochs=100, batch_size=50,
                        class_weight=class_weights, callbacks=_callbacks)
 
 pickle.dump(history.history,

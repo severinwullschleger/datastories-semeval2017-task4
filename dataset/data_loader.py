@@ -84,7 +84,7 @@ class SemEvalDataLoader:
         return data
 
     def get_gold(self, task):
-        fname = "SemEval2017-task4-test.subtask-{}.english.txt".format(task)
+        fname = "SemEval2018-T3_gold_test_task{}_emoji.txt".format(task)
         task_dir = "Subtask_{}/gold/".format(task)
         file = os.path.join(os.path.dirname(__file__), task_dir, fname)
         data = self.parse_file(file, with_topic=task != "A")
